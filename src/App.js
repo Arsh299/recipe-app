@@ -1,15 +1,29 @@
-import React from 'react';
+import React,{Component}from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/Home';
+import Recipes from './pages/Recipes';
+import SingleRecipes from  './pages/SingleRecipes';
+import Default from  './pages/Default';
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 
-function App() {
-  return (
-    <div>
-      
-          Learn React
-        
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <main>
+          {/* navbar */}
+          <Navbar/>
+          <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/recipes"exact component={Recipes}/>
+            <Route path="/recipes/:id" component={SingleRecipes}/>
+            <Route component={Default}/>
+          </Switch>
+        </main>
+      </Router>
+    )
+  }
 }
-
-export default App;
+export default App
