@@ -19,9 +19,9 @@ export default class Search extends Component {
                     placeholder="chicken,onion,carrots"
                     value={search}
                     onChange={handleChange}/>
-                    <div className="input-group-append">
-                        <button type="submit">
-                            <i className="fas fa-search"/>
+                    <div className="input-group-append ">
+                        <button type="submit" className="btn btn-primary btn-sm" style={{height:48,width:50,top:16,left:1}} onClick={handleSubmit}>
+                            <i className="fas fa-search" style={{fontSize:20,textAlign:'center'}}/>
                         </button>
                     </div>
                 </div>
